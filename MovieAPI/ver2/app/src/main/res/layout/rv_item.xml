@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_rnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rnum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rank"
+        app:layout_constraintTop_toBottomOf="@id/tv_rnum"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_rankInten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rankInten"
+        app:layout_constraintTop_toBottomOf="@id/tv_rank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_rankOldAndNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rankOldAndNew"
+        app:layout_constraintTop_toBottomOf="@id/tv_rankInten"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_movieCd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="movieCd"
+        app:layout_constraintTop_toBottomOf="@id/tv_rankOldAndNew"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_movieNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="movieNm"
+        app:layout_constraintTop_toBottomOf="@id/tv_movieCd"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_openDt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="openDt"
+        app:layout_constraintTop_toBottomOf="@id/tv_movieNm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_salesAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salesAmt"
+        app:layout_constraintTop_toBottomOf="@id/tv_openDt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_salesShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salesShare"
+        app:layout_constraintTop_toBottomOf="@id/tv_salesAmt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_salesInten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salesInten"
+        app:layout_constraintTop_toBottomOf="@id/tv_salesShare"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_salesChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salesChange"
+        app:layout_constraintTop_toBottomOf="@id/tv_salesInten"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_salesAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salesAcc"
+        app:layout_constraintTop_toBottomOf="@id/tv_salesChange"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_audiCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="audiCnt"
+        app:layout_constraintTop_toBottomOf="@id/tv_salesAcc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_audiInten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="audiInten"
+        app:layout_constraintTop_toBottomOf="@id/tv_audiCnt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_audiChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="audiChange"
+        app:layout_constraintTop_toBottomOf="@id/tv_audiInten"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_audiAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="audiAcc"
+        app:layout_constraintTop_toBottomOf="@id/tv_audiChange"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_scrnCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scrnCnt"
+        app:layout_constraintTop_toBottomOf="@id/tv_audiAcc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_showCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showCnt"
+        app:layout_constraintTop_toBottomOf="@id/tv_scrnCnt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    rnum	        문자열	순번을 출력합니다.-->
+<!--    rank	        문자열	해당일자의 박스오피스 순위를 출력합니다.-->
+<!--    rankInten	    문자열	전일대비 순위의 증감분을 출력합니다.-->
+<!--    rankOldAndNew	문자열	랭킹에 신규진입여부를 출력합니다. “OLD” : 기존 , “NEW” : 신규-->
+<!--    movieCd	        문자열	영화의 대표코드를 출력합니다.-->
+<!--    movieNm	        문자열	영화명(국문)을 출력합니다.-->
+<!--    openDt	        문자열	영화의 개봉일을 출력합니다.-->
+<!--    salesAmt	    문자열	해당일의 매출액을 출력합니다.-->
+<!--    salesShare	    문자열	해당일자 상영작의 매출총액 대비 해당 영화의 매출비율을 출력합니다.-->
+<!--    salesInten	    문자열	전일 대비 매출액 증감분을 출력합니다.-->
+<!--    salesChange	    문자열	전일 대비 매출액 증감 비율을 출력합니다.-->
+<!--    salesAcc	    문자열	누적매출액을 출력합니다.-->
+<!--    audiCnt	        문자열	해당일의 관객수를 출력합니다.-->
+<!--    audiInten	    문자열	전일 대비 관객수 증감분을 출력합니다.-->
+<!--    audiChange	    문자열	전일 대비 관객수 증감 비율을 출력합니다.-->
+<!--    audiAcc	        문자열	누적관객수를 출력합니다.-->
+<!--    scrnCnt	        문자열	해당일자에 상영한 스크린수를 출력합니다.-->
+<!--    showCnt	        문자열	해당일자에 상영된 횟수를 출력합니다.-->
