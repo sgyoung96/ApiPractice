@@ -23,4 +23,10 @@ class MovieAdapter(val context: Context): RecyclerView.Adapter<MovieViewHolder>(
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         holder.bind(data[position])
     }
+
+    fun setDataList(data: List<DailyBoxOfficeList>) {
+        this.data = data
+        notifyDataSetChanged()
+
+    }
 }

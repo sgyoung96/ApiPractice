@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieapirv.network.BaseInfo
@@ -18,54 +19,75 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MovieContract.View {
 
     var adapter: MovieAdapter? = null
-    var data = listOf<DailyBoxOfficeList>()
+    var data: DailyBoxOfficeList? = null
+
+    var presenter: MoviePresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        callMovieList()
-    }
-
-    fun callMovieList() {
-        var getMovieListBuilder = GetMovieListBuilder()
-        getMovieListBuilder.requestMovieAPI
-            .getMovieList(
-                BaseInfo.MOVIE_API_KEY,
-                "20210603"
-            )
-            .enqueue(object: Callback<MovieResponse> {
-                override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-                    Log.d("FAIL MESSAGE", ">>>>>>>>>${t.message}")
-                }
-
-                override fun onResponse(
-                    call: Call<MovieResponse>,
-                    response: Response<MovieResponse>
-                ) {
-                    val movieResponse = response.body()
-                    val movieList: List<DailyBoxOfficeList>? = movieResponse?.boxOfficeResult?.dailyBoxOfficeList
-
-                    data = movieList!!
-
-                    Log.d("SUCCESS: JSON", ">>>>>>>>>$movieList")
-
-                    initRecycler()
-                }
-            })
-    }
-
-    fun initRecycler() {
 
         rv_movie_list.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         adapter = MovieAdapter(this)
-
-        adapter?.data = data
-        adapter?.notifyDataSetChanged()
-
         rv_movie_list.adapter = adapter
+
+        presenter = MoviePresenter()
+
+        presenter?.setView(this)
+        presenter?.getMovieList()
+
+
+//        callMovieList()
+    }
+
+//    fun callMovieList() {
+//        var getMovieListBuilder = GetMovieListBuilder()
+//        getMovieListBuilder.requestMovieAPI
+//            .getMovieList(
+//                BaseInfo.MOVIE_API_KEY,
+//                "20210603"
+//            )
+//            .enqueue(object: Callback<MovieResponse> {
+//                override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
+//                    Log.d("FAIL MESSAGE", ">>>>>>>>>${t.message}")
+//                }
+//
+//                override fun onResponse(
+//                    call: Call<MovieResponse>,
+//                    response: Response<MovieResponse>
+//                ) {
+//                    val movieResponse = response.body()
+//                    val movieList: List<DailyBoxOfficeList>? = movieResponse?.boxOfficeResult?.dailyBoxOfficeList
+//
+//                    data = movieList!!
+//
+//                    Log.d("SUCCESS: JSON", ">>>>>>>>>$movieList")
+//
+//                    initRecycler()
+//                }
+//            })
+//    }
+//
+//    fun initRecycler() {
+//
+//        rv_movie_list.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+//        adapter = MovieAdapter(this)
+//
+//        adapter?.data = data
+//        adapter?.notifyDataSetChanged()
+//
+//        rv_movie_list.adapter = adapter
+//    }
+
+    override fun sendData(data: List<DailyBoxOfficeList>) {
+        adapter?.setDataList(data)
+    }
+
+    override fun sendMessage(message: String?) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT)
     }
 }
 
@@ -77,7 +99,7 @@ getMovieList(
         @Query("multiMovieYn") multiMovieYn: String,
         @Query("repNationCd") repNationCd: String,
         @Query("wideAreaCd") wideAreaCd: String
- */
+*/
 
 /*
 [요청 파라미터 샘플 값]

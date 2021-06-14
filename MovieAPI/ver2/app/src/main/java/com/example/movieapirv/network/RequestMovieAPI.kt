@@ -1,14 +1,16 @@
 package com.example.movieapirv.network
 
 import com.example.movieapirv.network.result.MovieResponse
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RequestMovieAPI {@GET("/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
-fun getMovieList(
-    @Query("key") key: String,
-    @Query("targetDt") targetDt: String
-): retrofit2.Call<MovieResponse>
+interface RequestMovieAPI {
+    @GET("/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
+    fun getMovieList(
+        @Query("key") key: String,
+        @Query("targetDt") targetDt: String
+    ): Call<MovieResponse>
 }
 
 /*

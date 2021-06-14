@@ -3,7 +3,8 @@ package com.example.movieapirv.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class GetMovieListBuilder {var requestMovieAPI: RequestMovieAPI
+class GetMovieListBuilder {
+    var requestMovieAPI: RequestMovieAPI
 
     init {
         val retrofit = Retrofit.Builder()
